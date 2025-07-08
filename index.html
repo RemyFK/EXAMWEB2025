@@ -1,12 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ma Salle de Sport</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="color: aqua;">
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">@Ma salle de Sport</div>
+            <button class="burger" aria-label="Menu">&#9776;</button>
+            <nav class="nav">
+                <a href="#features">Activités</a>
+                <a href="#pricing">Tarifs</a>
+                <a href="#formulaire">Paiement</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-light">Se connecter</a>
+                <a href="register.html" class="btn-dark">S'inscrire</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-slider">
+                <div class="slide active">
+                    <h1>Boostez votre forme</h1>
+                    <img class="img-fluid" src="image1.png" alt="Salle 1">
+                </div>
+                <div class="slide">
+                    <h1>Rejoignez notre communauté</h1>
+                    <img class="img-fluid" src="image2.png" alt="Salle 2">
+                </div>
+                <div class="slide">
+                    <h1>Atteignez vos objectifs</h1>
+                    <img class="img-fluid" src="image3.png" alt="Salle 3">
+                </div>
+            </section>
+
+            <section id="features" class="features container">
+                <h2>Nos activités</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Natation</div>
+                    <div class="feature-item">Cardio Biking</div>
+                    <div class="feature-item">Cours Collectif</div>
+                    <div class="feature-item">Circuit Training</div>
+                    <div class="feature-item">Body Building</div>
+                    <div class="feature-item">HIIT</div>
+                </div>
+            </section>
+
+            <section class="benefit primary container">
+                <div class="grid">
+                    <div>
+                        <h2>Un encadrement professionnel</h2>
+                        <p>Nos coachs sont certifiés et vous accompagnent dans chaque étape de votre progression.</p>
+                    </div>
+                    <img src="benefit1.png" alt="Coaching">
+                </div>
+            </section>
+
+            <section class="benefit secondary container">
+                <div class="grid">
+                    <img src="benefit2.png" alt="Confort">
+                    <div>
+                        <h2>Installations modernes</h2>
+                        <p>Profitez d’équipements de dernière génération dans un cadre agréable et motivant.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="pricing">
+                <h2>Choisissez votre formule</h2>
+                <p class="pricing-subtitle">Choisissez un plan adapté à vos objectifs fitness. Tarifs simples. Aucun frais caché.</p>
+            
+                <div class="notice-banner">
+                    Profitez de nos équipements de qualité professionnelle et de nos coachs certifiés.
+                </div>
+                
+                <div class="billing-toggle">
+                    <button class="billing-option active" onclick="toggleBilling('monthly')">Mensuel</button>
+                    <button class="billing-option" onclick="toggleBilling('annual')">Annuel</button>
+                </div>
+                <span class="savings-badge">Économisez jusqu'à 20% !</span>
+        
+                <div class="plan-selector">
+                    <div class="plan" onclick="selectPlan('Basic')">
+                        <h3>Basic</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>29
+                            <span class="period">/ mois</span>
+                        </div>
+        
+                        <ul>
+                            <li>Natation</li>
+                            <li>Cardio Biking</li>
+                            <li>Accès 7j/7</li>
+                            <li>Vestiaires & Douches</li>
+                        </ul>
+                        <button class="plan-button">Choisir ce plan</button>
+        
+                    </div>
+                    <div class="plan" onclick="selectPlan('Superior')">
+                        <h3>Superior</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>120
+                            <span class="period">/ mois</span>
+                        </div>
+                        <ul>
+                            <li>Natation</li>
+                            <li>Cardio Biking</li>
+                            <li>Cours Collectifs</li>
+                            <li>Circuit Training</li>
+                            <li>Accès prioritaire</li>
+                            <li>1 séance coaching/mois</li>
+                        </ul>
+                        <button class="plan-button primary">Choisir ce plan</button>
+        
+                    </div>
+                    <div class="plan" onclick="selectPlan('Ultimate')">
+                        <h3>Ultimate</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>300
+                            <span class="period">/ mois</span>
+                        </div>
+                        <ul>
+                            <li>Natation</li>
+                            <li>Cardio Biking</li>
+                            <li>Cours Collectifs</li>
+                            <li>Circuit Training</li>
+                            <li>Body Building</li>
+                            <li>HIIT</li>
+                            <li>Coach personnel illimité</li>
+                            <li>Plan nutritionnel</li>
+                        </ul>
+                        <button class="plan-button">Choisir ce plan</button>
+        
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <div class="cta-content">
+                    <h3>Commencez votre essai gratuit</h3>
+                    <p>Allez-y maintenant. C'est gratuit et ça ne prendra que quelques minutes.</p>
+                    <form action="/submit-contact" method="post" class="form" >
+                        <div class="form">
+                            <input type="text" placeholder="Nom" required />
+                        </div>
+                        <div class="form">
+                            <input type="email" placeholder="Email" required />
+                        </div>   
+                        <div class="form">
+                            <input type="text" placeholder="Entreprise" />
+                        </div>
+                        <div class="form">
+                            <button type="submit" class="btn">S'inscrire gratuitement</button>
+                        </div>                       
+                    
+                    </form>
+                </div>
+                              
+                
+            </section>
+        </div>
+    </main>
     
-    Je m'appelle Remy?
+
+    <footer class="site-footer" id="contact">
+        <p>© 2025 Ma Salle de Sport — Tous droits réservés</p>
+        <p>Conditions générales | Politique de confidentialité | Contact</p>
+    </footer>
+
+    <script>
+      const slides = document.querySelectorAll('.hero-slider .slide');
+      let index = 0;
+
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 4000);
+
+      function selectPlan(planName) {
+        const plans = {
+          "Basic": {
+            price: "$29/mois",
+            features: ["Natation", "Cardio Biking","Accès 7j/7","Vestiaires & Douches"]
+          },
+          "Superior": {
+            price: "$120/mois",
+            features: ["Natation", "Cardio Biking", "Cours Collectif", "Circuit Training", "Accès prioritaire", "1 séance coaching/mois"]
+          },
+          "Ultimate": {
+            price: "$300/mois",
+            features: ["Natation", "Cardio Biking", "Cours Collectif", "Circuit Training", "Body Building", "HIIT","Coach personnel illimité","Plan nutritionnel"]
+          }
+        };
+
+        document.getElementById("plan").value = planName;
+        const recap = plans[planName];
+        document.getElementById("recap-name").textContent = `Nom : ${planName}`;
+        document.getElementById("recap-price").textContent = `Tarif : ${recap.price}`;
+
+        const featuresList = document.getElementById("recap-features");
+        featuresList.innerHTML = "";
+        recap.features.forEach(feature => {
+          const li = document.createElement("li");
+          li.textContent = feature;
+          featuresList.appendChild(li);
+        });
+
+        document.getElementById("plan-recap").style.display = "block";
+        document.getElementById("formulaire").scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
 </body>
 </html>
